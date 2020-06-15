@@ -1,0 +1,14 @@
+/* CSS */
+:root {
+  --primary: rgba(20, 21, 34, 1);
+  --seats: rgb(141, 153, 174);
+  --light: rgba(237, 242, 244, 0.7);
+  /* --selected: rgba(214, 216, 79, 1); */
+  --selected: rgba(228, 255, 26, 1);
+  --occupied: rgba(217, 4, 41, 1);
+  --prim-grad: linear-gradient(
+    180deg,
+    rgb(70, 83, 105),
+    rgba(20, 21, 34, 1) 30%
+  );
+}

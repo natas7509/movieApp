@@ -1,23 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import 'pallet.css';
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #242333;
-  color: #fff;
+  background: var(--prim-grad);
+  color: var(--light);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   font-family: 'Lato', sans-serif;
+  letter-spacing: 1.5;
   margin: 0;
 }
 
 .movie-container {
-  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-container h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.movie-container span {
+  color: var(--selected);
+}
+
+.movie-container label {
+  padding: 0.7rem;
+  text-transform: uppercase;
 }
 
 .movie-container select {
@@ -25,33 +46,57 @@ body {
   border: 0;
   border-radius: 5px;
   font-size: 14px;
-  margin-left: 10px;
+  margin: 10px 0;
   padding: 5px 15px 5px 15px;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+    linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.5em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
+  outline: none;
 }
 
 .container {
-  perspective: 1000px;
+  perspective: 300px;
   margin-bottom: 30px;
 }
 
 .seat {
-  background-color: #444451;
-  height: 12px;
-  width: 15px;
+  background-color: var(--seats);
+  height: 14px;
+  width: 27px;
   margin: 3px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  margin: 7px 5px;
+  transform: rotate(15deg);
+}
+
+.seat.left {
+  transform: rotate(15deg);
+}
+.seat.middle {
+  transform: rotate(0deg);
+}
+.seat.right {
+  transform: rotate(-15deg);
+}
+
+.seat.remove {
+  background-color: var(--primary);
 }
 
 .seat.selected {
-  background-color: #6feaf6;
+  background-color: var(--selected);
 }
 
 .seat.occupied {
-  background-color: #fff;
+  background-color: var(--occupied);
 }
 
 .seat:nth-of-type(2) {
@@ -73,10 +118,10 @@ body {
 }
 
 .showcase {
-  background: rgba(0, 0, 0, 0.1);
+  /* background: var(--light); */
   padding: 5px 10px;
   border-radius: 5px;
-  color: #777;
+  color: var(--light);
   list-style-type: none;
   display: flex;
   justify-content: space-between;
@@ -99,10 +144,10 @@ body {
 
 .screen {
   background-color: #fff;
-  height: 70px;
+  height: 80px;
   width: 100%;
-  margin: 15px 0;
-  transform: rotateX(-45deg);
+  margin: 1rem 0 3.5rem;
+  transform: rotateX(-90deg);
   box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
 }
 
@@ -111,5 +156,5 @@ p.text {
 }
 
 p.text span {
-  color: #6feaf6;
+  color: var(--selected);
 }
